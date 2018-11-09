@@ -1,10 +1,10 @@
-const code = '=';//prefix
+const code = '$';//prefix
  
 client.on('message',async message => {
     if(message.content.startsWith(code + "buy")) {
   if(!message.channel.guild) return message.reply('This Command For Servers Only !');
     let jscodes = message.guild.channels.find(`name`, "orders");
-    if(!jscodes) return message.channel.send(":x:لم اجد الروم الخاص بنشر الاكواد");
+    if(!jscodes) return message.channel.send(":x:لم اجد الروم الخاص بالطلبات");
       let filter = m => m.author.id === message.author.id;
       let thisMessage;
       let thisFalse;
@@ -54,7 +54,7 @@ client.on('message',async message => {
           }
           if(collected.first().content === 'نعم') {
             if(thisFalse === false) return;
-            msg.edit(':dove: **| Done :white_check_mark:, تم بنجاح نشر كودك في روم الاكواد**');
+            msg.edit(':dove: **| Done :white_check_mark:, تم بنجاح ارسال طلبك الي روم طلبات**');
             collected.first().delete();
             jscodes.send(`@everyone | @here
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
