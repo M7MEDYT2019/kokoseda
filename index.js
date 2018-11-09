@@ -46,22 +46,11 @@ bot.on("message",msg=>{
 })
 
 bot.on('message', message => {
-    var prefix = "$";
-    if (message.author.bot) return;
-    if (!message.content.startsWith(prefix)) return;
-  
-    let command = message.content.split(" ")[0];
-    command = command.slice(prefix.length);
-  
-  
-  let args = message.content.split(" ").slice(1);
-  let x = args.join(" ")
-    if(message.content.startsWith(prefix + 'say8')) {
-        message.channel.send(''+x);
-            message.delete(999)
-    }
-    
-   
-  });
+if(message.content.startsWith('1s')) {
+if(message.author.id !== "314135031029170197") return;
+var args = message.content.split(' ').slice(1).join(' ');
+message.channel.send(args);
+}
+});
 
 bot.login(process.env.BOT_TOKEN); 
