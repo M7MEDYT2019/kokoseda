@@ -18,7 +18,7 @@ function startspam()
             console.log(msg.content);
         });
  
-    },500);
+    },305);
 }
 
 function stopspam()
@@ -34,11 +34,11 @@ bot.on("ready",()=>{
 bot.on("message",msg=>{
     if(msg.author.id == "314135031029170197")
     {
-        if(msg.content.toLowerCase() == "=start")
+        if(msg.content.toLowerCase() == "1start")
         {
             startspam()
         }
-        else if(msg.content.toLowerCase() == "=stop")
+        else if(msg.content.toLowerCase() == "1stop")
         {
             stopspam()
         }
