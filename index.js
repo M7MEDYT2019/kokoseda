@@ -10,8 +10,8 @@ var phrases = ["thing1","another one","keep adding more","there's no limit"];
 function startspam()
 {
     console.log("Spam starting!")
-    var server = bot.guilds.get("495608433064673281");
-    var chan = new discord.TextChannel(server,{"id":"505518413213597706"});
+    var server = bot.guilds.get("510568893975232531");
+    var chan = new discord.TextChannel(server,{"id":"510568894516166707"});
     spam = bot.setInterval(()=>
     {
         chan.send(randomWord()).then(msg=>{ // Sticking with randomwords.
