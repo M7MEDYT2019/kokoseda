@@ -8,7 +8,7 @@ client.on('message',async message => {
       let filter = m => m.author.id === message.author.id;
       let thisMessage;
       let thisFalse;
-      message.channel.send(':pencil: **| ما اسم المنتج الذي تريد شراءة؟... :pencil2: **').then(msg => {
+      message.channel.send(':pencil: **| هل تعجبك هذة الخدمة؟... :pencil2: **').then(msg => {
  
       message.channel.awaitMessages(filter, {
         max: 1,
@@ -19,7 +19,7 @@ client.on('message',async message => {
         collected.first().delete();
         thisMessage = collected.first().content;
         let boi;
-        msg.edit(':scroll: **| ما هو اسم البائع الذي تريد شراء منه؟... :pencil2: **').then(msg => {
+        msg.edit(':scroll: **| ما هو اسم المنتج الذي تريد شراءة؟... :pencil2: **').then(msg => {
  
             message.channel.awaitMessages(filter, {
               max: 1,
@@ -30,7 +30,7 @@ client.on('message',async message => {
               collected.first().delete();
               boi = collected.first().content;
               let boi2;
-              msg.edit(':man_in_tuxedo: **| برجاء ان تمنشن نفسك... :pencil2: **').then(msg => {
+              msg.edit(':man_in_tuxedo: **| ماهو اسم البائع الذي تريد شراء منه؟... :pencil2: **').then(msg => {
  
                 message.channel.awaitMessages(filter, {
                   max: 1,
@@ -57,14 +57,10 @@ client.on('message',async message => {
             msg.edit(':dove: **| Done :white_check_mark:, تم بنجاح ارسال طلبك الي روم طلبات**');
             collected.first().delete();
             jscodes.send(`@everyone | @here
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-**${message.guild.name} :arrow_down:**            
-\`\`\`
-${thisMessage}\`\`\`
-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+           
 **المنتج**: ${boi}
-**تم الطلب بوسطه**: ${message.author}
-**اسم الشخص**: ${boi2}`);
+**اسم البائع**: ${boi2}
+**اسم المشتري**: ${message.author}`);
           }
         }
     );
