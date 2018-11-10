@@ -3,7 +3,7 @@ const code = '$';//prefix
 client.on('message',async message => {
     if(message.content.startsWith(code + "buy")) {
   if(!message.channel.guild) return message.reply('This Command For Servers Only !');
-    let jscodes = message.guild.channels.find(`name`, "orders");
+    let jscodes = message.guild.channels.find(`name`, "طلبات");
     if(!jscodes) return message.channel.send(":x:لم اجد الروم الخاص بالطلبات");
       let filter = m => m.author.id === message.author.id;
       let thisMessage;
